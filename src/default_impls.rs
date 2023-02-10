@@ -46,12 +46,10 @@ known_deep_size!(0;
     atomic::AtomicI8,
     atomic::AtomicI16,
     atomic::AtomicI32,
-    atomic::AtomicI64,
     atomic::AtomicIsize,
     atomic::AtomicU8,
     atomic::AtomicU16,
     atomic::AtomicU32,
-    atomic::AtomicU64,
     atomic::AtomicUsize,
 
     num::NonZeroI8,
@@ -66,6 +64,12 @@ known_deep_size!(0;
     num::NonZeroU64,
     num::NonZeroU128,
     num::NonZeroUsize,
+);
+
+#[cfg(target_pointer_width = "64")]
+known_deep_size!(0;
+    atomic::AtomicI64,
+    atomic::AtomicU64,
 );
 
 known_deep_size!(0;
